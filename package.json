@@ -8,7 +8,7 @@
     "watch":"npx tsc -w",
     "dev" : "nodemon dist/index.js",
     "build":"npx tsc"
-  },
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ailine2020/node-typescript-starter.git"
