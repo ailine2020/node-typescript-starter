@@ -1,8 +1,8 @@
-import { User } from "./user";
-import { Skill } from "./skill";
-import { Category } from "./category";
-import { Level } from "./level";
+import { User } from './user'
+import { Skill } from './skill'
+import { Category } from './category'
 
-const entities = [User, Skill, Category, Level];
+const entities = [User, Skill, Category]
+const entitiesObject = { User, Skill, Category }
 
-export { entities };
+export { entities, entitiesObject }
