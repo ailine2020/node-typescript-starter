@@ -22,3 +22,16 @@ describe('GET /', () => {
             });
     });
 });
+describe('GET /test', () => {
+    it('should return 200 & valid response with top !', async (done) => {
+        request(app)
+            .get(`/api/v1/test`)
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .end((err, res) => {
+                if (err) return done(err);
+                expect(res.body).toMatchObject({ message: 'top !' });
+                done();
+            });
+    });
+});
