@@ -10,6 +10,9 @@ export class Category extends BaseEntity {
     @Column()
     name: string;
 
-    @OneToMany(() => Category, category => category.skills)
+    @Column()
+    description: string;
+
+    @OneToMany(() => Skill, skill => skill.category)
     skills: Skill[]
 }
