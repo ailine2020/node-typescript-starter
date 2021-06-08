@@ -1,5 +1,4 @@
 import { CategoryRepo } from "../../categoryRepo";
-import { categoryProps } from "../../categoryTypes";
 
 export class GetCategory{
     private categoryRepo: CategoryRepo;
@@ -7,8 +6,8 @@ export class GetCategory{
     constructor(categoryRepo: CategoryRepo){
         this.categoryRepo = categoryRepo
     }
-    public async execute(props: categoryProps){
-        return await this.categoryRepo.find(props);
+    public async execute(){
+        return await this.categoryRepo.find();
     }
-    
+
 }

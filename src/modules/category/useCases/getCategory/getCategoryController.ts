@@ -7,10 +7,9 @@ export class GetCategoryController {
   constructor(getCategory: GetCategory) {
     this.useCase = getCategory;
   }
-  public async execute(req: Request, res: Response) {
-    const { name, description } = req.params;
+  public async execute(_req: Request, res: Response) {
 
-    const allCategories = await this.useCase.execute({ name, description });
+    const allCategories = await this.useCase.execute();
     console.log("All Categories", allCategories);
 
     res.status(200).json(allCategories);

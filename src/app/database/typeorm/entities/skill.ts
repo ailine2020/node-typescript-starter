@@ -1,5 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm";
+  
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, BaseEntity } from "typeorm";
 import { Category } from './category'
+import { Progress } from './progress'
 
 @Entity()
 export class Skill extends BaseEntity {
@@ -12,4 +14,7 @@ export class Skill extends BaseEntity {
 
     @ManyToOne(() => Category, category => category.skills)
     category: Category
+
+    @OneToMany(() => Progress, progress => progress.skill)
+    progresses: Progress[]
 }
