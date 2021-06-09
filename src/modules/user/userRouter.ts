@@ -3,7 +3,9 @@ import { createUserController } from './useCases/createUser/index'
 
 const userRouter: Router = Router();
 
-///api/v1/skills/
+//Create
+
+userRouter.get('/', (req, res) => createUserController.execute(req, res))
 userRouter.post('/', (req, res) => createUserController.execute(req, res))
 
 export { userRouter }

@@ -11,4 +11,9 @@ export class CreateUser {
     public async execute(props: createUserProps) {
         this.userRepo.create(props);
     }
+
+    public async find(){
+        return await this.userRepo.find();
+    }
+
 }

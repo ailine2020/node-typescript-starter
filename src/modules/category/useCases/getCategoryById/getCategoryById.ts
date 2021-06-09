@@ -1,3 +1,4 @@
+// import { getCategoryById } from "../../categoryRepo";
 import { CategoryRepo } from "../../categoryRepo";
 
 export class GetCategoryById {
@@ -7,7 +8,7 @@ export class GetCategoryById {
     this.categoryRepo = categoryRepo;
   }
 
-  public async execute(id : number) {
-    return await this.categoryRepo.getCategoryById(id);
+  public async execute() {
+    return await getCategoryById();
   }
 }

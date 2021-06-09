@@ -1,4 +1,5 @@
 import { categoryProps } from "./categoryTypes";
+import { Request, Response } from "express";
 
 export class CategoryRepo {
   private entities: any;
@@ -26,8 +27,9 @@ export class CategoryRepo {
     console.log("-----------", CategoryEntity);
     return await CategoryEntity.find();
   }
-  public async getCategoryById() {
+  public async getCategoryById(req: Request, _res: Response) {
     const CategoryEntity = this.entities.Category;
-    return await CategoryEntity.findOne();
+    console.log("-----------", req.params.id);
+    return await CategoryEntity.findOne(req.params.id);
   }
 }
